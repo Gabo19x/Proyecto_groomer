@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "../pages/home"
 import Login from "../pages/login"
+import Admin from "../pages/admin"
+import TablaClientes from "../components/especificos/clientes"
 
 import {RutaPrivada} from "./rutaProtegida"
 
@@ -17,7 +19,7 @@ const rutas = createBrowserRouter([
     },
     {
         path: "/admin",
-        element: <RutaPrivada>  </RutaPrivada>,
+        element: <RutaPrivada> <Admin/> </RutaPrivada>,
         children: [
             {
                 path: "agenda",
@@ -35,7 +37,7 @@ const rutas = createBrowserRouter([
             },
             {
                 path: "clientes",
-                element: "",
+                element: <TablaClientes/>,
                 children: [
                     {
                         path: "crear",

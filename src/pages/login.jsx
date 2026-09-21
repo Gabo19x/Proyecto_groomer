@@ -29,7 +29,7 @@ export default function Login() {
             setCargando(false)
             console.log(error)
         } else {
-            navegar('/')
+            navegar('/admin/clientes')
             console.log(`Inicio de sesion exitoso`)
         }
     }

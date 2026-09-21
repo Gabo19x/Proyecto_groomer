@@ -1,4 +1,5 @@
 import Header from "../components/generales/Header"
+import Footer from "../components/generales/footer"
 
 export default function Home() {
     return(
@@ -10,7 +11,7 @@ export default function Home() {
                 <h1>Gabi´s pets</h1>
 
                 <p>
-                    Servicio de alta calidad en gromming (peluqueria canica)
+                    Servicio de alta calidad en grooming (peluqueria canina)
                 </p>
 
                 <p>
@@ -23,6 +24,8 @@ export default function Home() {
             <section>
                 AGENDA AQUI
             </section>
+
+            <Footer/>
         </>
     );
 }
