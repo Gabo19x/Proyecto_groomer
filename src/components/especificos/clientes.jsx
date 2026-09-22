@@ -47,9 +47,9 @@ export default function TablaClientes() {
         return clientes.map((cliente) => (
             <tr key={cliente.id}>
                 <td>{cliente.nombre_mascota}</td>
-                <td>{cliente.nombre_dueno} 📞{cliente.telefono}</td>
+                <td><p>{cliente.nombre_dueno}</p> <p>📞{cliente.telefono}</p> </td>
                 <td>{cliente.notas}</td>
-                <td>{cliente.updated_at}</td>
+                <td>{new Date(cliente.updated_at).toLocaleDateString('es-CO')}</td>
                 
                 <td>
                     <button className="Boton_ver_mas" onClick={() => navegar(`/admin/clientes/editar/${cliente.id}`)}>
