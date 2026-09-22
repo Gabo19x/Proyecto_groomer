@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom';
 import { GetClientes, BuscarClientes, CrearCliente, ActualizarCliente, BorrarCliente } from "../../hooks/useApiClientes"
 
 export default function TablaClientes() {
@@ -6,6 +7,8 @@ export default function TablaClientes() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [busqueda, setBusqueda] = useState('')
+
+    const navegar = useNavigate();
 
     const cargar = useCallback( async () => {
         setLoading(true)
@@ -28,28 +31,6 @@ export default function TablaClientes() {
         cargar()
     }, [])
 
-    async function CrearCliente(datos) {
-        const {data, error} = await CrearCliente(datos)
-
-        if(error) {
-            console.log("No se pudo crear cliente")
-            throw error
-        }
-
-        setClientes((prev) => [data, ...prev])
-    }
-
-    async function EditarCliente(id, datos) {
-        const {data, error} = await ActualizarCliente(id, datos)
-
-        if(error) {
-            console.log("No se pudo editar cliente")
-            throw error
-        }
-
-        setClientes((prev) => prev.map((c) => (c.id === id ? data : c)))
-    }
-
     async function ElimnarCliente(id) {
         const {error} = await BorrarCliente(id)
 
@@ -62,8 +43,6 @@ export default function TablaClientes() {
     }
 
     function RenderTabla() {
-        console.log(clientes.map((c) => {console.log(c.nombre_mascota);
-        }));
         
         return clientes.map((cliente) => (
             <tr key={cliente.id}>
@@ -73,7 +52,7 @@ export default function TablaClientes() {
                 <td>{cliente.updated_at}</td>
                 
                 <td>
-                    <button className="Boton_ver_mas" onClick={() => navegar(`/clientes/editar/${cliente.id}`)}>
+                    <button className="Boton_ver_mas" onClick={() => navegar(`/admin/clientes/editar/${cliente.id}`)}>
                         🛠 Editar
                     </button>
                     
@@ -89,7 +68,8 @@ export default function TablaClientes() {
     <>
         <p>{error}</p>
 
-        <button onClick={() => {navegar("/clientes/crear")}}>➕ Crear</button>
+        <button onClick={() => {navegar("/admin/clientes/crear")}}>➕ Crear</button>
+
         {
             loading ? (<p>Cargando...</p>) : (
                 <table>

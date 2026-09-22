@@ -32,6 +32,21 @@ export async function BuscarClientes(termino) {
 }
 
 /* FUNCION ASYNC
+  Busca un cliente por su ID
+  @paramas id
+  @return los datos, si hay error
+*/
+export async function GetClientePorId(id) {
+  const { data, error } = await supabase
+      .from('clientes')
+      .select('*')
+      .eq('id', id)
+      .single()
+
+  return { data, error }
+}
+
+/* FUNCION ASYNC
     Crea un cliente nuevo en la tabla, segun los datos pasados.
 
     @params cada parte necesaria para crear un registro

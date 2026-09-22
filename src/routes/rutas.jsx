@@ -4,6 +4,7 @@ import Home from "../pages/home"
 import Login from "../pages/login"
 import Admin from "../pages/admin"
 import TablaClientes from "../components/especificos/clientes"
+import FormClientes from "../components/especificos/formClientes"
 
 import {RutaPrivada} from "./rutaProtegida"
 
@@ -23,8 +24,11 @@ const rutas = createBrowserRouter([
         children: [
             {
                 path: "agenda",
-                element: "",
                 children: [
+                    {
+                        path: "dashboard",
+                        element: ""
+                    },
                     {
                         path: "crear",
                         element: ""
@@ -37,15 +41,18 @@ const rutas = createBrowserRouter([
             },
             {
                 path: "clientes",
-                element: <TablaClientes/>,
                 children: [
                     {
+                        path: "dashboard",
+                        element: <TablaClientes/>
+                    },
+                    {
                         path: "crear",
-                        element: ""
+                        element: <FormClientes/>
                     },
                     {
                         path: "editar/:id",
-                        element: ""
+                        element: <FormClientes/>
                     }
                 ]
             }

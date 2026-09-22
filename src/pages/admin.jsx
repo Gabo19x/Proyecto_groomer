@@ -6,6 +6,10 @@ export default function Admin() {
         <>
             <Header home={false}/>
 
+            <h2>Base de datos de los clientes</h2>
+            <p>Mira los datos de los clientes. Tambien crea nuevos, edtalos o eliminalos.</p>
+            <hr />
+
             <Outlet/>
         </>
     );

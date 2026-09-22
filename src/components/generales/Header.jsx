@@ -40,8 +40,8 @@ export default function Header({home}) {
     } else {
         return (
             <header>
-                <button className='BotonMenu' onClick={() => {navegar("/admin/agenda")}}>💬 Agenda</button>
-                <button className='BotonMenu'onClick={() => {navegar("/admin/clientes")}}>🐶 Clientes</button>
+                <button className='BotonMenu' onClick={() => {navegar("/admin/agenda/dashboard")}}>💬 Agenda</button>
+                <button className='BotonMenu'onClick={() => {navegar("/admin/clientes/dashboard")}}>🐶 Clientes</button>
             </header>
         );
         
