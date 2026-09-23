@@ -1,5 +1,6 @@
 import Header from "../components/generales/Header"
 import Footer from "../components/generales/footer"
+import AgendaPublica from "../components/especificos/agendaPublica" 
 
 export default function Home() {
     return(
@@ -21,9 +22,7 @@ export default function Home() {
                 
             </section>
 
-            <section>
-                AGENDA AQUI
-            </section>
+            <AgendaPublica/>
 
             <Footer/>
         </>
