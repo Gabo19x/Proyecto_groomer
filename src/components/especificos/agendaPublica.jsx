@@ -7,8 +7,8 @@ import 'react-day-picker/dist/style.css'
 import {GetFechasOcupadasMes, GetHorariosOcupados} from "../../hooks/useApiAgendaPublica"
 import { daysInYear } from 'date-fns/constants'
 
-let hoy = startOfDay()
-let limiteFuturo = addMonths(hoy, 1)
+let hoy = startOfDay(new Date())
+let limiteFuturo = addMonths(hoy, 0)
 
 export default function AgendaPublica() {
     const [mes, setMes] = useState(new Date())
@@ -39,7 +39,7 @@ export default function AgendaPublica() {
     async function SeleccionarDia(fecha) {
         if(!fecha) return
 
-        setDia(new Date(fecha).toLocaleDateString('es-CO'))
+        setDia(fecha)
         console.log(dia);
         
         setCargando(true)
@@ -77,7 +77,7 @@ export default function AgendaPublica() {
             {
                 dia && (
                     <div>
-                        <h2>Horario de {dia}</h2>
+                        <h2>Horario de {new Date(dia).toLocaleDateString('es-CO')}</h2>
 
                         {
                             cargando 
