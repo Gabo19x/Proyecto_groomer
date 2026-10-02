@@ -32,6 +32,36 @@ export async function GetCitasDia(fecha) {
 }
 
 /* FUNCION ASYNC
+    Obtiene una cita en concreto por su id
+    @params id
+    @return la cita, si hay error
+*/
+export async function GetCitaId(id) {
+    const { data, error } = await supabase
+        .from('citas')
+        .select('*')
+        .eq('id', id)
+        .single()
+
+    return { data, error }
+}
+
+/* FUNCION ASYNC
+    Crea una cita nueva.
+    @params los datos para la cita
+    @return si ahay error
+*/
+export async function CrearCita(datos) {
+    const { data, error } = await supabase
+        .from('citas')
+        .insert([datos])
+        .select()
+        .single()
+
+    return { data, error }
+}
+
+/* FUNCION ASYNC
     Actualiza una cita
     @params id y los datos
     @return data??? si hay error
