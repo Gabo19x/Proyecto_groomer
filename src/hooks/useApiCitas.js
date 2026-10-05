@@ -11,7 +11,7 @@ export async function GetCitasFechasMes(desde, hasta) {
         .select("fecha")
         .gte("fecha", desde)
         .lte("fecha", hasta)
-        .neq("estado", "cancelada");
+        .neq("estado", "eliminada");
 
     return {data, error}
 }

@@ -5,6 +5,8 @@ import Login from "../pages/login"
 import Admin from "../pages/admin"
 import TablaClientes from "../components/especificos/clientes"
 import FormClientes from "../components/especificos/formClientes"
+import AgendaPrivada from "../components/especificos/agendaPrivada";
+import FormAgenda from "../components/especificos/formAgenda";
 
 import {RutaPrivada} from "./rutaProtegida"
 
@@ -27,15 +29,15 @@ const rutas = createBrowserRouter([
                 children: [
                     {
                         path: "dashboard",
-                        element: ""
+                        element: <AgendaPrivada/>
                     },
                     {
                         path: "crear",
-                        element: ""
+                        element: <FormAgenda/>
                     },
                     {
                         path: "editar/:id",
-                        element: ""
+                        element: <FormAgenda/>
                     }
                 ]
             },
