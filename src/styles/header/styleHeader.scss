@@ -1,0 +1,42 @@
+@import "../globales.scss";
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    @media (min-width: 1000px) {
+        gap: 50%;
+    }
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: $colorFondo2;
+
+    border-bottom: 3px solid $colorgris;
+
+    margin-bottom: $espacio-grande;
+    padding: $espacio-normal;
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.BotonesCuenta {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    @media (min-width: 1000px) {
+        gap: 10%;
+    }
+}

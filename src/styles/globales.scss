@@ -1,0 +1,109 @@
+// Varialbes
+$colorFondo: #1A1A19;
+$colorFondo2: #151515;
+$colorBlanco: white;
+$colorgris: #313130;
+$conlorVerde: #3E5C4E;
+$colorAmarillo: #C98A2E;
+$colorRojo: #B23B3B;
+
+$texto: "Roboto", sans-serif;
+
+$tamaño-encabezado: 60px;
+$tamaño-titulo: 30px;
+$tamaño-subtitulo: 20px;
+$tamaño-parrafo: 18px;
+
+$espacio-grande:60px;
+$espacio-normal: 20px;
+$espacio-peque: 10px;
+
+// Globales
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $texto;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: $colorFondo;
+    padding: auto;
+}
+
+h1 {
+    font-family: $texto;
+    font-size: $tamaño-encabezado;
+    color: $colorBlanco;
+}
+
+h2 {
+    font-family: $texto;
+    font-size: $tamaño-titulo;
+    color: $colorBlanco;
+}
+
+h3 {
+    font-family: $texto;
+    font-size: $tamaño-subtitulo;
+    color: $colorBlanco;
+}
+
+p { 
+    font-size: $tamaño-parrafo;
+    color: $colorBlanco;
+}
+
+label { 
+    font-size: $tamaño-titulo; 
+    color: $colorBlanco;
+}
+
+span {
+    font-size: $tamaño-parrafo;
+    font-weight: bolder;
+    color: $colorBlanco;
+}
+
+br {
+    background-color: $colorBlanco;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.BotonRelleno {
+    background-color: $colorBlanco;
+    color: $colorFondo;
+    padding: 5px $espacio-peque;
+    font-weight: bold;
+    width: 100%;
+
+    border-radius: 5px;
+    border: 2px solid $colorBlanco;
+
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-color: $colorFondo;
+        color: $colorBlanco;
+    }
+}
+
+.BotonNormal {
+    @extend .BotonRelleno;
+
+    background-color: $colorFondo;
+    color: $colorBlanco;
+
+    &:hover {
+        background-color: $colorBlanco;
+        color: $colorFondo;
+    }
+}

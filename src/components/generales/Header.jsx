@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import {useAuth} from "../../context/Autenticar"
 
+import "../../styles/header/styleHeader.css"
+import IconoHuella from "../../assets/Huella.svg"
+
 export default function Header({home}) {
     const navegar = useNavigate();
     const {user, signOut} = useAuth();
@@ -14,15 +17,15 @@ export default function Header({home}) {
         if(user) {
             return(
             <div className="BotonesCuenta">
-                <button className='BotonMenu' onClick={() => {navegar("/admin")}}>🐶 Ver más</button>
-                <button className='BotonMenu' onClick={() => {CerrarSesion()}}>❌ Cerrar sesion</button>
+                <button className='BotonRelleno' onClick={() => {navegar("/admin")}}>🐶 Ver más</button>
+                <button className='BotonNormal' onClick={() => {CerrarSesion()}}>❌ Cerrar sesion</button>
             </div>
             );
             
         } else {
             return (
             <div className="BotonesCuenta">
-                <button className='BotonMenu' onClick={() => {navegar("/login")}}>✅ Iniciar sesion</button>
+                <button className='BotonNormal' onClick={() => {navegar("/login")}}>✅ Iniciar sesion</button>
             </div>
             );
             
@@ -32,7 +35,7 @@ export default function Header({home}) {
     if(home) {
         return (
             <header>
-                <h2>Gabi´s Pets</h2>
+                <img src={IconoHuella} alt='Icono huella' />
 
                 <BotonesCuenta />
             </header>
@@ -40,8 +43,9 @@ export default function Header({home}) {
     } else {
         return (
             <header>
-                <button className='BotonMenu' onClick={() => {navegar("/admin/agenda/dashboard")}}>💬 Agenda</button>
-                <button className='BotonMenu'onClick={() => {navegar("/admin/clientes/dashboard")}}>🐶 Clientes</button>
+                <img src={IconoHuella} alt='Icono huella' />
+                <button className='BotonRelleno' onClick={() => {navegar("/admin/agenda/dashboard")}}>💬 Agenda</button>
+                <button className='BotonRelleno'onClick={() => {navegar("/admin/clientes/dashboard")}}>🐶 Clientes</button>
             </header>
         );
         

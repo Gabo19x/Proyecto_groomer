@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #1A1A19;
+  padding: auto;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 60px;
+  color: white;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+p {
+  font-size: 18px;
+  color: white;
+}
+
+label {
+  font-size: 30px;
+  color: white;
+}
+
+span {
+  font-size: 18px;
+  font-weight: bolder;
+  color: white;
+}
+
+br {
+  background-color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+.BotonRelleno, .BotonNormal {
+  background-color: white;
+  color: #1A1A19;
+  padding: 5px 10px;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid white;
+  transition: all 0.5s ease;
+}
+.BotonRelleno:hover, .BotonNormal:hover {
+  background-color: #1A1A19;
+  color: white;
+}
+
+.BotonNormal {
+  background-color: #1A1A19;
+  color: white;
+}
+.BotonNormal:hover {
+  background-color: white;
+  color: #1A1A19;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+@media (min-width: 1000px) {
+  footer {
+    gap: 30%;
+  }
+}
+footer {
+  align-items: center;
+  justify-content: end;
+  background-color: #151515;
+  border-top: 3px solid #313130;
+  padding: 20px;
+}
+footer h3 {
+  color: #313130;
+}
+footer a {
+  color: #B23B3B;
+}/*# sourceMappingURL=styleFooter.css.map */

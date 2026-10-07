@@ -1,3 +1,5 @@
+import "../../styles/footer/styleFooter.css"
+
 export default function Footer() {
     const fechaActual = new Date();
     const fechaFormateada = `${fechaActual.getMonth() + 1}/${fechaActual.getFullYear()}`;

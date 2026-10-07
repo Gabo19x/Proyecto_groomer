@@ -1,0 +1,34 @@
+@import "../globales.scss";
+
+footer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    @media (min-width: 1000px) {
+        gap: 30%;
+    }
+
+
+    align-items: center;
+    justify-content: end;
+
+    background-color: $colorFondo2;
+
+    border-top: 3px solid $colorgris;
+
+    padding: $espacio-normal;
+
+    h3 {
+        color: $colorgris;
+    }
+
+    a {
+        color: $colorRojo;
+    }
+}
