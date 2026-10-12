@@ -7,6 +7,8 @@ import 'react-day-picker/dist/style.css'
 import {GetFechasOcupadasMes, GetHorariosOcupados} from "../../hooks/useApiAgendaPublica"
 import { daysInYear } from 'date-fns/constants'
 
+import "../../styles/agenda/styleAgenda.css"
+
 let hoy = startOfDay(new Date())
 let limiteFuturo = addMonths(hoy, 0)
 
@@ -40,7 +42,6 @@ export default function AgendaPublica() {
         if(!fecha) return
 
         setDia(fecha)
-        console.log(dia);
         
         setCargando(true)
 
@@ -57,7 +58,7 @@ export default function AgendaPublica() {
     }
 
     return (
-        <section>
+        <section className='Agenda'>
             <h2>Agenda disponible</h2>
 
             <DayPicker
@@ -76,20 +77,24 @@ export default function AgendaPublica() {
 
             {
                 dia && (
-                    <div>
-                        <h2>Horario de {new Date(dia).toLocaleDateString('es-CO')}</h2>
+                    <div className='Agenda_Horario'>
+                        <h2>Horario de: {new Date(dia).toLocaleDateString('es-CO')}</h2>
 
                         {
                             cargando 
-                            ? <p>Cargando agenda...</p> 
+                            ? <p className='TextoCargando'>...Cargando agenda...</p> 
                             : horarios.length === 0 ? (
-                                <p>✅ Dia sin agenda</p>
+                                <>
+                                    <p className='TextoVerde'>✅ Dia sin agenda ✅</p>
+                                    <p>Haga su llamada para agendar su cita</p>
+                                </>
+                                
                             ) : (
                                 <ul>
                                     {
                                         horarios.map((h, i) => (
-                                            <li key={i}>
-                                                ❌ {h.hora_inicio.slice(0,5)} - {h.hora_fin.slice(0,5)}
+                                            <li key={i} className='TextoAmarillo'>
+                                                ❌ Ocupado en: {h.hora_inicio.slice(0,5)} - {h.hora_fin.slice(0,5)}
                                             </li>
                                         ))
                                     }

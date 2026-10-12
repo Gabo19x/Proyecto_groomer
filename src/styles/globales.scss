@@ -3,7 +3,7 @@ $colorFondo: #1A1A19;
 $colorFondo2: #151515;
 $colorBlanco: white;
 $colorgris: #313130;
-$conlorVerde: #36805d;
+$colorVerde: #36805d;
 $colorAmarillo: #C98A2E;
 $colorRojo: #B23B3B;
 
@@ -17,6 +17,8 @@ $tamaño-parrafo: 18px;
 $espacio-grande:60px;
 $espacio-normal: 20px;
 $espacio-peque: 10px;
+
+$borde-peque: 5px;
 
 // Globales
 * {
@@ -50,9 +52,10 @@ h3 {
     color: $colorBlanco;
 }
 
-p { 
+p, li { 
     font-size: $tamaño-parrafo;
     color: $colorBlanco;
+    list-style: none;
 }
 
 label { 
@@ -106,4 +109,32 @@ a {
         background-color: $colorBlanco;
         color: $colorFondo;
     }
+}
+
+// TEXTOS indicativos
+.TextoRojo {
+    padding: $espacio-peque;
+    background-color: $colorRojo;
+    border-radius: $borde-peque;
+}
+
+.TextoAmarillo {
+    @extend .TextoRojo;
+    background-color: $colorAmarillo;
+}
+
+.TextoVerde {
+    @extend .TextoRojo;
+    background-color: $colorVerde;
+}
+
+.TextoGris {
+    @extend .TextoRojo;
+    font-style: normal;
+}
+
+.TextoCargando {
+    @extend .TextoRojo;
+    font-style: italic;
+    background-color: $colorgris;
 }

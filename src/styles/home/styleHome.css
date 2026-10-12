@@ -94,6 +94,8 @@ a {
 .Home {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0 20px;
 }
 .Home h1 {
@@ -104,11 +106,21 @@ a {
 .Home h2 {
   color: #313130;
 }
+.Home .Informacion {
+  margin-bottom: 20px;
+  /* Media query PC */
+}
+@media (min-width: 1000px) {
+  .Home .Informacion {
+    padding: 0 240px;
+  }
+}
 
 .Carrusel {
   width: 90%;
   max-width: 120em;
   overflow: hidden;
+  margin-bottom: 60px;
 }
 .Carrusel .Carrusel_Elemento {
   width: 300%;

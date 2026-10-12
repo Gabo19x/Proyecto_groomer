@@ -13,6 +13,8 @@
 .Home {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     padding: 0 $espacio-normal;
 
@@ -25,6 +27,16 @@
     h2 {
         color: $colorgris;
     }
+
+    .Informacion {
+        margin-bottom: $espacio-normal;
+
+        /* Media query PC */
+        @media (min-width: 1000px) {
+            padding: 0 $espacio-grande*4;
+        }
+    }
+    
 }
 
 .Carrusel {
@@ -32,6 +44,8 @@
     max-width: 120em;
     
     overflow: hidden;
+
+    margin-bottom: $espacio-grande;
 
     .Carrusel_Elemento {
         width: 300%; // AQUI: se edita el tamaño sgun la cantidad de img

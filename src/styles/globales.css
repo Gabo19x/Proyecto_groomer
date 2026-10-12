@@ -29,9 +29,10 @@ h3 {
   color: white;
 }
 
-p {
+p, li {
   font-size: 18px;
   color: white;
+  list-style: none;
 }
 
 label {
@@ -79,4 +80,27 @@ a {
 .BotonNormal:hover {
   background-color: white;
   color: #1A1A19;
+}
+
+.TextoRojo, .TextoCargando, .TextoGris, .TextoVerde, .TextoAmarillo {
+  padding: 10px;
+  background-color: #B23B3B;
+  border-radius: 5px;
+}
+
+.TextoAmarillo {
+  background-color: #C98A2E;
+}
+
+.TextoVerde {
+  background-color: #36805d;
+}
+
+.TextoGris {
+  font-style: normal;
+}
+
+.TextoCargando {
+  font-style: italic;
+  background-color: #313130;
 }/*# sourceMappingURL=globales.css.map */

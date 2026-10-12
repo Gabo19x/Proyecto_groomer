@@ -1,0 +1,52 @@
+@import "../globales.scss";
+
+.Agenda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-bottom: $espacio-grande;
+
+    h2 {
+        margin-bottom: $espacio-normal;
+    }
+}
+
+.Agenda_Horario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: $espacio-normal;
+
+    h2 {
+        margin-top: $espacio-normal;
+        margin-bottom: $espacio-normal;
+    }
+
+    p {
+        margin-top: $espacio-peque;
+    }
+
+    li {
+        margin-bottom: $espacio-peque;
+    }
+    
+}
+
+.rdp-root {
+  --rdp-accent-color: #36805d;              // día seleccionado
+  --rdp-accent-background-color: #ffffff;   // hover / fondo suave
+  --rdp-day-height: 44px;
+  --rdp-day-width: 44px;
+  --rdp-day_button-border-radius: 8px;
+  --rdp-day_button-height: 40px;
+  --rdp-day_button-width: 40px;
+
+  background: $colorgris;
+  color: $colorBlanco;
+  border-radius: 12px;
+  padding: 1rem;
+}
