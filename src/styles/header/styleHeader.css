@@ -53,6 +53,10 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .BotonRelleno, .BotonNormal {
   background-color: white;
   color: #1A1A19;

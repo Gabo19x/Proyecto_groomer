@@ -53,6 +53,10 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .BotonRelleno, .BotonNormal {
   background-color: white;
   color: #1A1A19;
@@ -82,8 +86,6 @@ footer {
   flex-direction: row;
   gap: 5px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 @media (min-width: 1000px) {
   footer {

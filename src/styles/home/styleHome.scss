@@ -1,0 +1,80 @@
+@import "../globales.scss";
+
+.Pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.Pagina_Contenido {
+    flex: 1;
+}
+
+.Home {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 $espacio-normal;
+
+    h1 {
+        font-style: italic;
+        color: $conlorVerde;
+        margin-bottom: $espacio-normal;
+    }
+
+    h2 {
+        color: $colorgris;
+    }
+}
+
+.Carrusel {
+    width: 90%;
+    max-width: 120em;
+    
+    overflow: hidden;
+
+    .Carrusel_Elemento {
+        width: 300%; // AQUI: se edita el tamaño sgun la cantidad de img
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        transition: all 0.5s ease;
+
+        .Carrusel_Elemento_Imagen {
+            width: calc(100% / 3); // AQUI: se edita el tamaño de laimg segun la cantidad de img
+            height: 300px;
+            // border: 1px solid black;
+            border-radius: 5px;
+            padding: 30px;
+        }
+    }
+
+    .Carrusel_Botones {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        .Carrusel_Botones_Boton {
+            width: 1em;
+            height: 1em;
+            background-color: $colorBlanco;
+            border-radius: 100%;
+            margin: 1em;
+            border: 0;
+            padding: 0;
+        }
+
+        .BotonActivo {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: $conlorVerde;
+        }
+        
+    }
+}
