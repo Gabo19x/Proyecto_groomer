@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom';
 import { GetClientes, BuscarClientes, CrearCliente, ActualizarCliente, BorrarCliente } from "../../hooks/useApiClientes"
 
+import "../../styles/clientes/styleClientes.css"
+
 export default function TablaClientes() {
     const [clientes, setClientes] = useState([])
     const [loading, setLoading] = useState(true)
@@ -52,12 +54,12 @@ export default function TablaClientes() {
                 <td>{new Date(cliente.updated_at).toLocaleDateString('es-CO')}</td>
                 
                 <td>
-                    <button className="Boton_ver_mas" onClick={() => navegar(`/admin/clientes/editar/${cliente.id}`)}>
-                        🛠 Editar
+                    <button className="BotonRelleno" onClick={() => navegar(`/admin/clientes/editar/${cliente.id}`)}>
+                        🔁
                     </button>
                     
-                    <button className="Boton_ver_mas" onClick={() => ElimnarCliente(cliente.id)}>
-                        ❌ Eliminar
+                    <button className="BotonNormal" onClick={() => ElimnarCliente(cliente.id)}>
+                        ❌
                     </button>
                 </td>
             </tr>
@@ -65,29 +67,29 @@ export default function TablaClientes() {
     }
 
     return (
-    <>
-        <p>{error}</p>
-
-        <button onClick={() => {navegar("/admin/clientes/crear")}}>➕ Crear</button>
+    <section className='Clientes'>
+        {error ? <p className='TextoError'>{error}</p> : <></>}
+       
+        <button className='BotonNormal' onClick={() => {navegar("/admin/clientes/crear")}}>➕ Crear</button>
 
         {
-            loading ? (<p>Cargando...</p>) : (
+            loading ? (<p className='TextoCargando'>Cargando...</p>) : (
                 <table>
-                        <thead>
-                            <tr>
-                                <th>Mascota</th>
-                                <th>Dueño y telefono</th>
-                                <th>Notas</th>
-                                <th>Ultima fecha</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {RenderTabla()}
-                        </tbody>
-                    </table>
+                    <thead>
+                        <tr>
+                            <th>Mascota</th>
+                            <th>Dueño y telefono</th>
+                            <th>Notas</th>
+                            <th>Ultima fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {RenderTabla()}
+                    </tbody>
+                </table>
             )
         }
-    </>
+    </section>
     )
 }
 

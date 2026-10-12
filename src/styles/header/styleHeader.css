@@ -117,7 +117,7 @@ header {
 }
 @media (min-width: 1000px) {
   header {
-    gap: 50%;
+    gap: 20%;
   }
 }
 header {

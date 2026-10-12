@@ -2,6 +2,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { GetClientes, GetClientePorId, CrearCliente, ActualizarCliente, BorrarCliente } from "../../hooks/useApiClientes"
 import { useEffect, useState } from 'react';
 
+import "../../styles/clientes/styleClientes.css"
+
 export default function FormClientes() {
     
     const {id} = useParams()
@@ -79,7 +81,7 @@ export default function FormClientes() {
     }
 
     return (
-        <section>
+        <section className='Form'>
         <h2>{esEdicion ? "⭐ Edita el cliente" : "⭐ Crea un nuevo cliente"}</h2>
 
         <form onSubmit={ClienteForm}>
@@ -104,7 +106,7 @@ export default function FormClientes() {
             />
 
             <label htmlFor="tel">📞 Telefono/s</label>
-            <p>Puede agregar mas de un telefono, solo separalo para mayor comprensión</p>
+            <p className='TextoNota'>Puede agregar mas de un telefono, solo separalo para mayor comprensión</p>
             <input 
                 type="text" 
                 id='tel'
@@ -115,7 +117,7 @@ export default function FormClientes() {
             />
 
             <label htmlFor="nota">💬 Notas</label>
-            <p>Agregue toda informacion util, como precios, cortes, comportamiento, tamaño, etc</p>
+            <p className='TextoNota'>Agregue toda informacion util, como precios, cortes, comportamiento, tamaño, etc</p>
             <textarea
                 type="text" 
                 id='nota'
@@ -126,8 +128,8 @@ export default function FormClientes() {
             >
             </textarea>
 
-            <p>{error}</p>
-            <button type='submit'>{esEdicion ? "Actualizar!" : "Crear!"}</button>
+            {error ? <p className='TextoError'>{error}</p> : <></>}
+            <button className='BotonRelleno' type='submit'>{esEdicion ? "Actualizar!" : "Crear!"}</button>
         </form>
         </section>
     )

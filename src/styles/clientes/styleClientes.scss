@@ -1,0 +1,61 @@
+@import "../globales.scss";
+
+.Clientes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 $espacio-normal;
+
+    button {
+        max-width: 90%;
+    }
+}
+
+table {
+    margin: $espacio-grande $espacio-peque;
+    
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $colorgris;
+
+    th,
+    td {
+        border: 1px solid $colorFondo2;
+        padding: 16px;
+        text-align: left;
+        vertical-align: middle;
+        color: $colorBlanco;
+    }
+
+    th {
+        background-color: $colorVerde;
+        font-weight: 600;
+    }
+
+    tbody tr:hover {
+        background-color: $colorFondo2;
+    }
+
+    td:last-child {
+            
+        button {
+            margin: 5px;
+        }
+    }
+}
+
+.Form {
+    @extend .Clientes;
+    margin-bottom: $espacio-grande;
+
+    form {
+        @extend .Clientes;
+        align-items: start;
+
+        textarea {
+            margin-bottom: $espacio-grande;
+        }
+    }
+}

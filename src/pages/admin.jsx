@@ -1,16 +1,23 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/generales/Header"
+import Footer from "../components/generales/footer"
+
+import "../styles/Admin/styleAdmin.css"
 
 export default function Admin() {
     return(
         <>
             <Header home={false}/>
 
-            <h2>Base de datos de los clientes</h2>
-            <p>Mira los datos de los clientes. Tambien crea nuevos, edtalos o eliminalos.</p>
-            <hr />
+            <div className="Informacion">
+                <h2>Dashboard de agendamiento y clientes</h2>
+                <p>Gestiona la agenda y tambien los clientes.</p>
+                <hr />
+            </div>
 
             <Outlet/>
+
+            <Footer/>
         </>
     );
 }

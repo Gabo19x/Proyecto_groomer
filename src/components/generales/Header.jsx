@@ -45,7 +45,7 @@ export default function Header({home}) {
             <header>
                 <img src={IconoHuella} alt='Icono huella' />
                 <button className='BotonRelleno' onClick={() => {navegar("/admin/agenda/dashboard")}}>💬 Agenda</button>
-                <button className='BotonRelleno'onClick={() => {navegar("/admin/clientes/dashboard")}}>🐶 Clientes</button>
+                <button className='BotonRelleno' onClick={() => {navegar("/admin/clientes/dashboard")}}>🐶 Clientes</button>
             </header>
         );
         

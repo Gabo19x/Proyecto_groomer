@@ -1,0 +1,16 @@
+@import "../globales.scss";
+
+.Informacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 $espacio-normal;
+
+    @media (min-width: 1000px) {
+        padding: 0 $espacio-grande*4;
+    }
+
+    margin-bottom: $espacio-grande;
+}

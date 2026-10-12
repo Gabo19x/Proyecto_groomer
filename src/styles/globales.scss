@@ -58,11 +58,6 @@ p, li {
     list-style: none;
 }
 
-label { 
-    font-size: $tamaño-titulo; 
-    color: $colorBlanco;
-}
-
 span {
     font-size: $tamaño-parrafo;
     font-weight: bolder;
@@ -81,6 +76,16 @@ a {
     text-decoration: none;
 }
 
+hr {
+    margin: $espacio-peque 0;
+
+    width: 100%;
+    height: 5px;
+    color: $colorgris;
+    background-color: $colorgris;
+}
+
+// BOTONES
 .BotonRelleno {
     background-color: $colorBlanco;
     color: $colorFondo;
@@ -137,4 +142,40 @@ a {
     @extend .TextoRojo;
     font-style: italic;
     background-color: $colorgris;
+}
+
+.TextoError {
+    @extend .TextoRojo;
+    font-style: italic;
+}
+
+.TextoNota {
+    @extend .TextoRojo;
+    background-color: $colorgris;
+    border-left: $borde-peque solid $colorAmarillo;
+    margin: $espacio-peque 0;
+}
+
+// FORMULARIO
+label { 
+    font-size: $tamaño-titulo; 
+    color: $colorBlanco;
+    margin-bottom: $espacio-peque;
+}
+
+input {
+    color: $colorBlanco;
+    background-color: transparent;
+    border: ($borde-peque - 2.5) solid $colorgris;
+    border-radius: $borde-peque;
+
+    width: 100%;
+
+    padding: 5px 10px;
+    margin-bottom: $espacio-normal;
+}
+
+textarea {
+    @extend input;
+    height: 100px;
 }

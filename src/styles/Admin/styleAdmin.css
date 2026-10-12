@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #1A1A19;
+  padding: auto;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 60px;
+  color: white;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+p, li {
+  font-size: 18px;
+  color: white;
+  list-style: none;
+}
+
+label {
+  font-size: 30px;
+  color: white;
+}
+
+span {
+  font-size: 18px;
+  font-weight: bolder;
+  color: white;
+}
+
+br {
+  background-color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  margin: 10px 0;
+  width: 100%;
+  height: 5px;
+  color: #313130;
+  background-color: #313130;
+}
+
+.BotonRelleno, .BotonNormal {
+  background-color: white;
+  color: #1A1A19;
+  padding: 5px 10px;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid white;
+  transition: all 0.5s ease;
+}
+.BotonRelleno:hover, .BotonNormal:hover {
+  background-color: #1A1A19;
+  color: white;
+}
+
+.BotonNormal {
+  background-color: #1A1A19;
+  color: white;
+}
+.BotonNormal:hover {
+  background-color: white;
+  color: #1A1A19;
+}
+
+.TextoRojo, .TextoError, .TextoCargando, .TextoGris, .TextoVerde, .TextoAmarillo {
+  padding: 10px;
+  background-color: #B23B3B;
+  border-radius: 5px;
+}
+
+.TextoAmarillo {
+  background-color: #C98A2E;
+}
+
+.TextoVerde {
+  background-color: #36805d;
+}
+
+.TextoGris {
+  font-style: normal;
+}
+
+.TextoCargando {
+  font-style: italic;
+  background-color: #313130;
+}
+
+.TextoError {
+  font-style: italic;
+}
+
+.Informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+@media (min-width: 1000px) {
+  .Informacion {
+    padding: 0 240px;
+  }
+}
+.Informacion {
+  margin-bottom: 60px;
+}/*# sourceMappingURL=styleAdmin.css.map */
