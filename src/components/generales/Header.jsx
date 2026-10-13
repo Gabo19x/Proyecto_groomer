@@ -17,7 +17,7 @@ export default function Header({home}) {
         if(user) {
             return(
             <div className="BotonesCuenta">
-                <button className='BotonRelleno' onClick={() => {navegar("/admin")}}>🐶 Ver más</button>
+                <button className='BotonRelleno' onClick={() => {navegar("/admin/agenda/dashboard")}}>💬 Ver más</button>
                 <button className='BotonNormal' onClick={() => {CerrarSesion()}}>❌ Cerrar sesion</button>
             </div>
             );
@@ -43,7 +43,7 @@ export default function Header({home}) {
     } else {
         return (
             <header>
-                <img src={IconoHuella} alt='Icono huella' />
+                <img onClick={() => {navegar("/")}} src={IconoHuella} alt='Icono huella' style={{ cursor: 'pointer' }}/>
                 <button className='BotonRelleno' onClick={() => {navegar("/admin/agenda/dashboard")}}>💬 Agenda</button>
                 <button className='BotonRelleno' onClick={() => {navegar("/admin/clientes/dashboard")}}>🐶 Clientes</button>
             </header>

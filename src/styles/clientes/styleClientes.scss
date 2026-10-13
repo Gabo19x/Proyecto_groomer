@@ -11,40 +11,42 @@
     button {
         max-width: 90%;
     }
-}
 
-table {
-    margin: $espacio-grande $espacio-peque;
-    
-    width: 100%;
-    border-collapse: collapse;
-    background-color: $colorgris;
+    table {
+        margin: $espacio-grande $espacio-peque;
+        
+        width: 100%;
+        border-collapse: collapse;
+        background-color: $colorgris;
 
-    th,
-    td {
-        border: 1px solid $colorFondo2;
-        padding: 16px;
-        text-align: left;
-        vertical-align: middle;
-        color: $colorBlanco;
-    }
+        th,
+        td {
+            border: 1px solid $colorFondo2;
+            padding: 16px;
+            text-align: left;
+            vertical-align: middle;
+            color: $colorBlanco;
+        }
 
-    th {
-        background-color: $colorVerde;
-        font-weight: 600;
-    }
+        th {
+            background-color: $colorVerde;
+            font-weight: 600;
+        }
 
-    tbody tr:hover {
-        background-color: $colorFondo2;
-    }
+        tbody tr:hover {
+            background-color: $colorFondo2;
+        }
 
-    td:last-child {
-            
-        button {
-            margin: 5px;
+        td:last-child {
+                
+            button {
+                margin: 5px;
+            }
         }
     }
 }
+
+
 
 .Form {
     @extend .Clientes;

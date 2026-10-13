@@ -100,7 +100,7 @@ hr {
 }
 
 .TextoGris {
-  font-style: normal;
+  background-color: #313130;
 }
 
 .TextoCargando {
@@ -124,7 +124,7 @@ label {
   margin-bottom: 10px;
 }
 
-input, textarea {
+input, select option, select, textarea {
   color: white;
   background-color: transparent;
   border: 2.5px solid #313130;
@@ -136,4 +136,22 @@ input, textarea {
 
 textarea {
   height: 100px;
+}
+
+.pendiente, .completada, .eliminada, .confirmada {
+  padding: 10px;
+  background-color: #C98A2E;
+  border-radius: 5px;
+}
+
+.confirmada {
+  background-color: #36805d;
+}
+
+.eliminada {
+  background-color: #B23B3B;
+}
+
+.completada {
+  background-color: #36805d;
 }/*# sourceMappingURL=globales.css.map */

@@ -100,7 +100,7 @@ hr {
 }
 
 .TextoGris {
-  font-style: normal;
+  background-color: #313130;
 }
 
 .TextoCargando {
@@ -124,10 +124,10 @@ label {
   margin-bottom: 10px;
 }
 
-input, textarea {
+input, select option, textarea {
   color: white;
   background-color: transparent;
-  border: 5px solid #313130;
+  border: 2.5px solid #313130;
   border-radius: 5px;
   width: 100%;
   padding: 5px 10px;
@@ -136,6 +136,24 @@ input, textarea {
 
 textarea {
   height: 100px;
+}
+
+.pendiente, .completada, .eliminada, .confirmada {
+  padding: 10px;
+  background-color: #C98A2E;
+  border-radius: 5px;
+}
+
+.confirmada {
+  background-color: #36805d;
+}
+
+.eliminada {
+  background-color: #B23B3B;
+}
+
+.completada {
+  background-color: #36805d;
 }
 
 .Clientes, .Form form, .Form {
@@ -148,29 +166,29 @@ textarea {
 .Clientes button, .Form button {
   max-width: 90%;
 }
-
-table {
+.Clientes table, .Form table {
   margin: 60px 10px;
   width: 100%;
   border-collapse: collapse;
   background-color: #313130;
 }
-table th,
-table td {
+.Clientes table th, .Form table th,
+.Clientes table td,
+.Form table td {
   border: 1px solid #151515;
   padding: 16px;
   text-align: left;
   vertical-align: middle;
   color: white;
 }
-table th {
+.Clientes table th, .Form table th {
   background-color: #36805d;
   font-weight: 600;
 }
-table tbody tr:hover {
+.Clientes table tbody tr:hover, .Form table tbody tr:hover {
   background-color: #151515;
 }
-table td:last-child button {
+.Clientes table td:last-child button, .Form table td:last-child button {
   margin: 5px;
 }
 

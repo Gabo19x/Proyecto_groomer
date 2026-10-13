@@ -34,6 +34,29 @@
         margin-bottom: $espacio-peque;
     }
     
+    // LA lista sea grid en PC
+    @media (min-width: 1000px) {
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: $espacio-peque;
+        }
+    }
+    
+}
+
+.AgendaCard {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    background-color: $colorgris;
+    border-radius: $borde-peque;
+
+    padding: $espacio-peque;
+    margin-top: $espacio-normal;
 }
 
 .rdp-root {
@@ -49,4 +72,18 @@
   color: $colorBlanco;
   border-radius: 12px;
   padding: 1rem;
+}
+
+.Form {
+    @extend .Agenda;
+    margin-bottom: $espacio-grande;
+
+    form {
+        @extend .Agenda;
+        align-items: start;
+
+        textarea {
+            margin-bottom: $espacio-grande;
+        }
+    }
 }

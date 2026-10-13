@@ -7,6 +7,8 @@ import 'react-day-picker/dist/style.css'
 
 import {GetCitasFechasMes, GetCitasDia, BorrarCita} from "../../hooks/useApiCitas"
 
+import "../../styles/agenda/styleAgenda.css"
+
 export default function AgendaPrivada() {
     const navegar = useNavigate()
     const [mes, setMes] = useState(new Date())
@@ -61,7 +63,7 @@ export default function AgendaPrivada() {
     }
 
     return(
-        <section>
+        <section className='Agenda'>
             <h2>Agenda disponible</h2>
 
             <DayPicker
@@ -77,30 +79,33 @@ export default function AgendaPrivada() {
 
             {
                 dia && (
-                    <div>
-                        <div className='dia-header'>
-                            <h3>citas el {new Date(dia).toLocaleDateString('es-CO')}</h3>
-                            <button onClick={() => navegar(`/admin/agenda/crear?fecha=${format(dia, 'yyyy-MM-dd')}`)}>
+                    <div className='Agenda_Horario'>
+                        <div className=''>
+                            <h2>Citas de: {new Date(dia).toLocaleDateString('es-CO')}</h2>
+                            <button className='BotonRelleno' onClick={() => navegar(`/admin/agenda/crear?fecha=${format(dia, 'yyyy-MM-dd')}`)}>
                                 ➕ Crear cita
                             </button>
                         </div>
 
-                        <p>{error}</p>
+                        {error ? <p className='TextoError'>{error}</p> : <></>}
 
                         {cargando ? (<p>Cargando...</p>) 
                         : citas.length === 0 ? (
-                            <p>✅ Dia sin agenda</p>
+                            <p className='TextoAmarillo'>Dia sin agenda</p>
                         ) : (
                             <ul>
                                 {citas.map((cita) => (
-                                    <li key={cita.id}>
-                                        <strong>{cita.hora_inicio.slice(0, 5)} - {cita.hora_fin.slice(0, 5)}</strong> | {cita.clientes?.nombre_mascota} (De: {cita.clientes?.nombre_dueno}) | {cita.servicio}
-                                        <span className={cita.estado}>{cita.estado}</span>
+                                    <li className='AgendaCard' key={cita.id}>
+                                        <strong>⏰ {cita.hora_inicio.slice(0, 5)} - {cita.hora_fin.slice(0, 5)}</strong>
+                                        <p>🐶 {cita.clientes?.nombre_mascota} (😊 De: {cita.clientes?.nombre_dueno})</p>
+                                        <p>Servicio: {cita.servicio}</p>
 
                                         {cita.notas && <p>📝 {cita.notas}</p>}
 
-                                        <button onClick={() => navegar(`/admin/agenda/editar/${cita.id}`)}>🛠 Editar</button>
-                                        <button onClick={() => eliminarCita(cita.id)}>❌ Eliminar</button>
+                                        <p className={cita.estado}>{cita.estado}</p>
+
+                                        <button className='BotonRelleno' onClick={() => navegar(`/admin/agenda/editar/${cita.id}`)}>🛠 Editar</button>
+                                        <button className='BotonNormal' onClick={() => eliminarCita(cita.id)}>❌ Borrar</button>
                                     </li>
                                 ))}
                             </ul>

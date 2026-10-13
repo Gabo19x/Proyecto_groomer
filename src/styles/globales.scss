@@ -135,7 +135,7 @@ hr {
 
 .TextoGris {
     @extend .TextoRojo;
-    font-style: normal;
+    background-color: $colorgris;
 }
 
 .TextoCargando {
@@ -178,4 +178,35 @@ input {
 textarea {
     @extend input;
     height: 100px;
+}
+
+select {
+    @extend input;
+    
+    option {
+        @extend input;
+    }
+}
+
+// Informacion
+.pendiente {
+    padding: $espacio-peque;
+    background-color: $colorAmarillo;
+    border-radius: $borde-peque;
+
+}
+
+.confirmada {
+    @extend .pendiente;
+    background-color: $colorVerde;
+}
+
+.eliminada {
+    @extend .pendiente;
+    background-color: $colorRojo;
+}
+
+.completada {
+    @extend .pendiente;
+    background-color: $colorVerde;
 }

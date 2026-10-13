@@ -5,6 +5,8 @@ import { GetCitaId, CrearCita, ActualizarCita } from '../../hooks/useApiCitas';
 
 const ESTADOS = ["pendiente", "confirmada", "eliminada", "completada"]
 
+import "../../styles/agenda/styleAgenda.css"
+
 export default function FormAgenda() {
     const { id } = useParams()
     const [searchParams] = useSearchParams()
@@ -84,11 +86,12 @@ export default function FormAgenda() {
     }
 
     return(
-        <section>
+        <section className='Form'>
             <h2>{esEdicion ? '⭐ Editar cita' : '⭐ Nueva cita'}</h2>
 
             <form onSubmit={ManejarSubmit}>
                 <label htmlFor="cliente">🐶 Cliente</label>
+                <p className='TextoNota'>Elige el cliente correspondiente (debe estar creado previamente)</p>
                 <select id="cliente" value={clienteId} onChange={(e) => setClienteId(e.target.value)} required>
                     <option value="">Selecciona un cliente</option>
                     {clientes.map((c) => (
@@ -98,7 +101,7 @@ export default function FormAgenda() {
                     ))}
                 </select>
 
-                <label htmlFor="fecha">Fecha</label>
+                <label htmlFor="fecha">Dia de la atencion</label>
                 <input type="date" id="fecha" value={fecha} onChange={(e) => setFecha(e.target.value)} required />
 
                 <label htmlFor="inicio">Hora inicio</label>
@@ -117,6 +120,7 @@ export default function FormAgenda() {
                 />
 
                 <label htmlFor="estado">Estado</label>
+                <p className='TextoNota'>Selecciona el estado según corresponda</p>
                 <select id="estado" value={estado} onChange={(e) => setEstado(e.target.value)}>
                     {ESTADOS.map((opcion) => (
                         <option key={opcion} value={opcion}>
@@ -126,11 +130,11 @@ export default function FormAgenda() {
                 </select>
 
                 <label htmlFor="notas">Notas</label>
+                <p className='TextoNota'>Cualquier información adicional del servicio de ese dia que sea importante</p>
                 <textarea id="notas" value={notas} onChange={(e) => setNotas(e.target.value)} />
-                <p>Agregue toda informacion util, como precios, cortes, comportamiento, tamaño, etc</p>
 
                 <p>{error}</p>
-                <button type="submit">{esEdicion ? 'Actualizar' : 'Crear'}</button>
+                <button className='BotonRelleno' type="submit">{esEdicion ? 'Actualizar' : 'Crear'}</button>
             </form>
         </section>
     );
