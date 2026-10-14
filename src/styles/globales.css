@@ -140,12 +140,12 @@ textarea {
 
 .pendiente, .completada, .eliminada, .confirmada {
   padding: 10px;
-  background-color: #C98A2E;
+  background-color: #1A1A19;
   border-radius: 5px;
 }
 
 .confirmada {
-  background-color: #36805d;
+  background-color: #C98A2E;
 }
 
 .eliminada {

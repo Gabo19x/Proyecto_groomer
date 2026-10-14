@@ -191,14 +191,14 @@ select {
 // Informacion
 .pendiente {
     padding: $espacio-peque;
-    background-color: $colorAmarillo;
+    background-color: $colorFondo;
     border-radius: $borde-peque;
 
 }
 
 .confirmada {
     @extend .pendiente;
-    background-color: $colorVerde;
+    background-color: $colorAmarillo;
 }
 
 .eliminada {

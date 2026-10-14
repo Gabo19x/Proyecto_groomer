@@ -89,7 +89,7 @@ export default function AgendaPrivada() {
 
                         {error ? <p className='TextoError'>{error}</p> : <></>}
 
-                        {cargando ? (<p>Cargando...</p>) 
+                        {cargando ? (<p className='TextoGris'>...Cargando...</p>) 
                         : citas.length === 0 ? (
                             <p className='TextoAmarillo'>Dia sin agenda</p>
                         ) : (

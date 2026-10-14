@@ -1,4 +1,4 @@
-# 🍖 Agenda de Gabi´s pets
+# 🐶 Agenda de Gabi´s pets
 
 Aplicación web de agendamiento con clientes con sistema de autenticación, 
 usuario protegido y gestión completa de contenido, como: agenda publica y privada, creacion de clientes, etc.
