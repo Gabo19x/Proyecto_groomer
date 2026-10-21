@@ -1,0 +1,17 @@
+@import "../globales.scss";
+
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: $espacio-normal $espacio-grande;
+
+    background-color: $colorFondo2;
+    
+
+    button {
+        margin-top: $espacio-peque;
+    }
+}

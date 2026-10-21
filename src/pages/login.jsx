@@ -2,6 +2,10 @@ import {useState} from "react"
 import {useAuth} from "../context/Autenticar"
 import {useNavigate, Link} from "react-router-dom"
 
+import { Footer } from "react-day-picker"
+import IconoHuella from "../assets/Huella.svg"
+import "../styles/login/styleLogin.css"
+
 export default function Login() {
     const {signIn} = useAuth()
     const navegar = useNavigate()
@@ -35,7 +39,8 @@ export default function Login() {
     }
 
     return(
-        <main className="Login">
+        <section className="Login">
+            <img src={IconoHuella} alt='Icono huella' />
             <h2>Inicio de sesion</h2>
 
             <form onSubmit={handleSubmit}>
@@ -57,14 +62,14 @@ export default function Login() {
                 >
                 </input>
 
-                {(error === null) ? "" : <p className="Mensaje_error">{error}</p> }
+                {(error === null) ? "" : <p className="TextoError">{error}</p> }
 
-                <button className="Boton_form" type="submit" disabled={cargando}>
+                <button className="BotonRelleno" type="submit" disabled={cargando}>
                     {cargando ? "Iniciando...": "Entrar"}
                 </button>
-            </form>
 
-            <button className="Boton_form" onClick={() => { navegar("/") }}>Volver al inicio</button>
-        </main>
+                <button className="BotonNormal" onClick={() => { navegar("/") }}>Volver al inicio</button>
+            </form>
+        </section>
     );
 }
