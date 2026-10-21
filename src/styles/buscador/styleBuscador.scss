@@ -1,0 +1,23 @@
+@import "../globales.scss";
+
+.Buscador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 $espacio-normal;
+
+    hr {
+        margin-bottom: $espacio-grande;
+        width: 80%;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .Buscador_resultados {
+        margin-top: $espacio-normal;
+    }
+}

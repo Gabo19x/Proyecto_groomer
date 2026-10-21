@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom';
+
 import { GetClientes, BuscarClientes, CrearCliente, ActualizarCliente, BorrarCliente } from "../../hooks/useApiClientes"
+import BuscadorClientes from './buscador';
 
 import "../../styles/clientes/styleClientes.css"
 
@@ -58,7 +60,7 @@ export default function TablaClientes() {
                         🔁
                     </button>
                     
-                    <button className="BotonNormal" onClick={() => ElimnarCliente(cliente.id)}>
+                    <button className="BotonNormal" onClick={() => { ElimnarCliente(cliente.id) }}>
                         ❌
                     </button>
                 </td>
@@ -67,30 +69,33 @@ export default function TablaClientes() {
     }
 
     return (
-    <section className='Clientes'>
-        {error ? <p className='TextoError'>{error}</p> : <></>}
-       
-        <button className='BotonNormal' onClick={() => {navegar("/admin/clientes/crear")}}>➕ Crear</button>
+    <>
+        <BuscadorClientes clientes={clientes} funcionEliminar={ElimnarCliente}/>
+        
+        <section className='Clientes'>
+            {error ? <p className='TextoError'>{error}</p> : <></>}
+        
+            <button className='BotonNormal' onClick={() => {navegar("/admin/clientes/crear")}}>➕ Crear</button>
 
-        {
-            loading ? (<p className='TextoCargando'>Cargando...</p>) : (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Mascota</th>
-                            <th>Dueño y telefono</th>
-                            <th>Notas</th>
-                            <th>Ultima fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {RenderTabla()}
-                    </tbody>
-                </table>
-            )
-        }
-    </section>
+            {
+                loading ? (<p className='TextoCargando'>Cargando...</p>) : (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mascota</th>
+                                <th>Dueño y telefono</th>
+                                <th>Notas</th>
+                                <th>Ultima fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {RenderTabla()}
+                        </tbody>
+                    </table>
+                )
+            }
+        </section>
+    </>
+    
     )
 }
-
-
